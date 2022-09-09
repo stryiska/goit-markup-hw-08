@@ -1,0 +1,132 @@
+
+.hero {
+    justify-content: center;
+
+    max-width: 100%;
+    padding: 100px 0;
+
+    margin-left: auto;
+    margin-right: auto;
+
+
+    background-color: $color-bg-dark;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include mobile {
+    max-width: 480px;
+        padding: 118px 0;
+        background-image: $linear-gradient,
+                      url(../images/hero_mob_1x.jpg); 
+    @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+background-image: $linear-gradient,
+                      url(../images/hero_mob_2x.jpg); 
+}
+}
+    @include tablet {
+max-width: 768px;
+background-image: $linear-gradient,
+                      url(../images/hero_tab_1x.jpg); 
+    @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+background-image: $linear-gradient,
+                      url(../images/hero_tab_2x.jpg); 
+}
+    }
+    @include desktop {
+    max-width: 1600px;
+
+    padding: 200px 0;
+    background-image: $linear-gradient,
+                      url(../images/hero.jpg); 
+    @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+background-image: $linear-gradient,
+                      url(../images/hero_2x.jpg); 
+}
+    }
+&__wrapper {
+
+    width: 300px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: 480px) {
+    width: 360px;
+    }
+    @include desktop {
+    width: 696px;
+    }
+}
+&__title {
+    font-weight: 900;
+font-size: 20px;
+    line-height: 1.62;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: $color-bg-main;
+
+    @include mobile {
+    font-size: 26px;
+    }
+    
+    @include desktop {
+    font-style: normal;
+    font-size: 44px;
+    line-height: 1.36;
+    }
+}
+
+&__btn {
+    display: block;
+
+    padding: 10px 24px;
+    margin-left: auto;
+    margin-right: auto;
+margin-top: 30px;
+
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+
+    border-radius: 4px;
+    
+    align-items: center;
+    text-align: center;
+
+    background-color: $color-accent;
+    color: $color-bg-main;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+
+    transition:
+    background-color 250ms $cubic-bezier 
+    box-shadow 250ms $cubic-bezier;
+@include tablet {
+    margin-top: 40px;
+}
+    @include desktop {
+    padding: 10px 32px;
+    }
+
+    
+&:hover,
+&:focus {
+    background-color: $color-btn-active;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+}
+}

@@ -1,0 +1,158 @@
+
+.menu-mobile {
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    opacity: 1;
+    visibility: 1;
+
+    transition: opacity 250ms $cubic-bezier,
+    visibility 250ms $cubic-bezier;
+
+    @include desktop {
+        display: none;
+    }
+
+    &__container {
+padding: 48px 40px;
+ width: 100vw;
+    height: 100vh;
+
+    background-color: $color-bg-main;
+
+    opacity: 1;
+
+    transition:
+    opacity 250ms $cubic-bezier,
+    transform 250ms $cubic-bezier; 
+    }
+
+&__btn--close {
+position: absolute;
+right: 15px;
+top: 10px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+width: 40px;
+height: 40px;
+
+padding: 0;
+
+background-color: transparent;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+&__icon--close {
+    width: 18px;
+    height: 18px;
+
+    padding: 0;
+    fill: $color-text-black;
+
+    transition: fill 250ms $cubic-bezier;
+
+}
+}
+.menu-mobile.is-hidden {
+    visibility: 0;
+    opacity: 0;
+}
+
+.menu-mobile__btn--close:hover .menu-mobile__icon--close {
+    fill: $color-accent;
+}
+.menu-mobile.is-hidden .menu-mobile__container {
+    opacity: 0;
+
+    transform: translate(-50%, -50%) scale(0);
+}
+.menu-text {
+font-weight: 500;
+line-height: 1.17;
+letter-spacing: 0.02em;
+
+}
+// .menu-wrap--mobile {
+
+// }
+.mob-nav {
+
+&__item {
+    &:not(:last-child) {
+        margin-bottom: 32px;
+    }
+}
+
+&__link {
+    font-size: 40px;
+
+color: $color-text-dark;
+transition: color 250ms $cubic-bezier;
+
+&:hover, &:focus {
+    color: $color-accent;
+}
+}
+
+    &__link--current-page {
+color: $color-accent;
+    }
+}
+.menu-wrap--bottom {
+    position: absolute;
+    bottom: 48px;
+    left: 40px;
+}
+.mob-contacts {
+margin-bottom: 64px;
+&__item {
+    &:not(:last-child) {
+        margin-bottom: 32px;
+    }
+}
+&__link--tel {
+font-size: 28px;
+color: $color-accent;
+@media screen and (min-width: 480px) {
+    font-size: 34px;
+}
+}
+&__link--mail {
+font-size: 24px;
+color: $color-text-main;
+    }
+}
+
+    .soc-links {
+// &--mobile {
+
+// }
+&__list--mobile {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 5px;
+}
+&__item--mobile {
+    &:not(:last-child) {
+padding-right: 5px;
+margin-right: 5px;
+border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+}
+&__link--mobile {
+    font-weight: 500;
+font-size: 18px;
+line-height: 1.22;
+
+letter-spacing: 0.02em;
+
+color: $color-accent;
+}
+}
