@@ -5,13 +5,17 @@
     display: flex;
     flex-wrap: wrap;
 
-    margin-bottom: $gap-title;
+    margin-bottom: 40px;
     row-gap: 15px;
     column-gap: 8px;
 
     justify-content: flex-start;
     @include tablet {
+        margin-bottom: 30px;
         justify-content: center;
+    }
+    @include desktop {
+        margin-bottom: 50px;
     }
 
 &__btn {
@@ -25,7 +29,7 @@
     text-align: center;
     text-transform: capitalize;
 
-    color: var(--dark-text-color);
+    color: $color-text-dark;
     box-shadow: 0;
 
     transition: background-color 250ms $cubic-bezier,
